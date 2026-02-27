@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tales From The Suitcase — Boston to the Smokies</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #fdf8f2;
+    color: #2a1e18;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(to bottom, #2e1008 0%, #7a2e10 60%, #b84a1a 100%);
+    color: #f5f0e8;
+    text-align: center;
+    padding: 100px 2rem 80px;
+  }
+
+  .hero-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #f0c060;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    color: rgba(245,240,232,0.65);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-date {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: #f0c060;
+    text-transform: uppercase;
+  }
+
+  /* NAV */
+  nav {
+    background: #fff;
+    border-bottom: 1px solid #e8e4de;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding: 0.8rem 1.5rem;
+  }
+
+  nav a {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #6a5a4a;
+    text-decoration: none;
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  nav a:hover {
+    background: #8b2e10;
+    color: #fff;
+  }
+
+  /* MAIN */
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* INTRO */
+  .intro {
+    padding: 5rem 0 3rem;
+    border-bottom: 1px solid #e8e0d8;
+  }
+
+  .intro p {
+    font-size: 1.05rem;
+    margin-bottom: 1.2rem;
+    color: #3a3028;
+  }
+
+  .intro p:first-child::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 0.8;
+    float: left;
+    margin-right: 0.1em;
+    margin-top: 0.1em;
+    color: #8b2e10;
+  }
+
+  /* DAY SECTION */
+  .day {
+    padding: 4rem 0 2rem;
+    border-bottom: 1px solid #e8e0d8;
+  }
+
+  .day-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #c06010;
+    margin-bottom: 0.5rem;
+  }
+
+  .day h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.7rem, 4vw, 2.6rem);
+    font-weight: 700;
+    color: #3a1208;
+    line-height: 1.15;
+    margin-bottom: 0.4rem;
+  }
+
+  .day-route {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: #8a7060;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e8e0d8;
+  }
+
+  .day p {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    color: #2a2420;
+  }
+
+  /* TIMESTAMP */
+  .stop {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0 1rem;
+    padding-left: 1rem;
+    border-left: 2px solid #c06010;
+  }
+
+  .stop-time {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #c06010;
+    white-space: nowrap;
+    padding-top: 0.1rem;
+    min-width: 60px;
+  }
+
+  .stop-place {
+    font-size: 0.85rem;
+    color: #5a4a3a;
+    font-style: italic;
+  }
+
+  /* QUOTE */
+  .quote {
+    margin: 2.5rem 0;
+    padding: 1.5rem 2rem;
+    border-left: 3px solid #c06010;
+    background: #fdf5ec;
+  }
+
+  .quote p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: #3a1208;
+    margin: 0;
+  }
+
+  /* SECTION HEADING */
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #8b2e10;
+    margin: 2.5rem 0 1rem;
+  }
+
+  /* DIVIDER */
+  .divider {
+    text-align: center;
+    padding: 3rem 0;
+    color: #c06010;
+    font-size: 0.9rem;
+    letter-spacing: 1rem;
+  }
+
+  /* CLOSING */
+  .closing {
+    text-align: center;
+    padding: 5rem 2rem 6rem;
+  }
+
+  .closing p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: #8b2e10;
+    margin-bottom: 1rem;
+  }
+
+  .closing span {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #9a8a7a;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #2e1008;
+    color: rgba(245,240,232,0.4);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  footer em { color: #f0c060; font-style: normal; }
+
+  @media (max-width: 600px) {
+    .container { padding: 0 1rem; }
+    .quote { padding: 1.2rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <p class="hero-label">Tales From The Suitcase</p>
+  <h1>Boston to the<br>Blue Ridge & Smokies</h1>
+  <p>A road trip through the heart of Appalachia</p>
+  <p class="hero-date">August 28 – September 2, 2025 &nbsp;·&nbsp; 5 States</p>
+</header>
+
+<nav>
+  <a href="#intro">Prologue</a>
+  <a href="#day1">Day 1</a>
+  <a href="#day2">Day 2</a>
+  <a href="#day3">Day 3</a>
+  <a href="#day4">Day 4</a>
+  <a href="#day5">Day 5</a>
+</nav>
+
+<main class="container">
+
+  <section class="intro" id="intro">
+    <p>The call came quietly — not in words, but in a restlessness that only open roads can cure. Southern charm. Mountain silhouettes. Air that tastes different, cleaner, like it's been filtered through a thousand pine trees before it reaches you. That was all the reason we needed.</p>
+    <p>We packed our bags, brewed a thermos of coffee, and pointed the car south from Boston as midnight approached. What followed was five days of winding mountain highways, misty valley mornings, crystal waterfalls, and moments so beautiful they almost didn't seem real.</p>
+    <p>This is the story of that journey — mile by mile, sunrise by sunrise.</p>
+  </section>
+
+  <!-- DAY 1 -->
+  <section class="day" id="day1">
+    <p class="day-label">Day One</p>
+    <h2>Chasing the Road at Midnight</h2>
+    <p class="day-route">Boston, MA → Pigeon Forge, TN &nbsp;·&nbsp; ~1,100 miles overnight</p>
+
+    <p>There's something almost sacred about leaving a city at night. As we rolled out of Boston just after 11 pm, the streets were hushed — amber streetlights casting long reflections on empty asphalt, the city slowly dissolving in our rearview mirror. Playlists queued, snacks arranged within arm's reach, the open highway stretching ahead like a promise.</p>
+
+    <div class="quote">
+      <p>"Night travel has its own rhythm — quiet highways, glowing diners, and the strange intimacy of the dark."</p>
+    </div>
+
+    <p>We drove through the sleeping world, catching glimpses of rivers lit by moonlight and small towns where not a single soul stirred. Every now and then, a lone truck rumbled past, its lights blinking like a distant lighthouse.</p>
+
+    <div class="stop">
+      <div class="stop-time">5:30 AM</div>
+      <div class="stop-place">Entering Pennsylvania — first light spilling over the foothills</div>
+    </div>
+    <p>Dawn arrived slowly, the sky shifting from ink to slate to pale gold. Rolling hills emerged from the darkness, farmhouses appearing one by one, smoke already curling from their chimneys.</p>
+
+    <div class="stop">
+      <div class="stop-time">7:30 AM</div>
+      <div class="stop-place">Scranton, PA — breakfast at a corner diner</div>
+    </div>
+    <p>Scranton welcomed us in soft morning light — brick streets, strong coffee, eggs fried just right. We snapped a photo by the iconic city sign before rolling south again.</p>
+
+    <div class="stop">
+      <div class="stop-time">10:30 AM</div>
+      <div class="stop-place">Shenandoah Valley, Virginia</div>
+    </div>
+    <p>Virginia entered like a painting being unveiled. Dense forest, patchwork farmland, ridgelines that seem to go on forever. We rolled down the windows.</p>
+
+    <div class="stop">
+      <div class="stop-time">12:30 PM</div>
+      <div class="stop-place">Harrisonburg, VA — lunch & a stroll</div>
+    </div>
+    <p>After 13 hours on the road, Harrisonburg felt like a gift. We stretched aching backs, discovered vibrant street murals, and lingered over lunch where the bread was fresh-baked and the pace of life seemed deliberately slower.</p>
+
+    <div class="stop">
+      <div class="stop-time">2:00 PM</div>
+      <div class="stop-place">Arrival — Pigeon Forge, Tennessee</div>
+    </div>
+    <p>The Appalachians rose around us, forests thickened, and the road curved through valleys that seemed untouched by time. We arrived tired, windswept, and completely alive.</p>
+
+    <h3>Gatlinburg & Clingmans Dome at Sunset</h3>
+    <p>The winding roads of Gatlinburg had us pulling over every few minutes. As the afternoon deepened, we drove up to Clingmans Dome — the highest point in the Smokies. The sky transformed: rose fading into tangerine, violet bleeding into deep blue. Tennessee one way, North Carolina the other. We stood there silently. Some moments don't need words.</p>
+    <p>Back in Pigeon Forge, the town buzzed with music, neon, and laughter. A Pirates of the Caribbean-themed attraction, quirky shops, and full hearts. The perfect end to a long day.</p>
+  </section>
+
+  <div class="divider">· · ·</div>
+
+  <!-- DAY 2 -->
+  <section class="day" id="day2">
+    <p class="day-label">Day Two</p>
+    <h2>Into the Wild</h2>
+    <p class="day-route">Cades Cove & Abrams Falls · Great Smoky Mountains NP</p>
+
+    <p>The Smokies in the morning are something else — damp pine drifting through the window, light still soft and golden. We headed to Cades Cove, a valley that seems to exist in a different century.</p>
+
+    <p>We rounded a bend and stopped. A black bear cub was nosing through the undergrowth, its mother a watchful silhouette nearby. We cut the engine. Nobody spoke. The bears moved at their own unhurried pace, indifferent to our wonder. Deer appeared later, grazing in the meadows. The kind of moment you can't plan for — you can only be grateful when it happens.</p>
+
+    <div class="quote">
+      <p>"The loop road opened to wide green fields framed by layers of blue ridges. It was so still, even the sound of tires felt too loud."</p>
+    </div>
+
+    <h3>Abrams Falls Trail</h3>
+    <p>The sound of rushing water grew louder with every step. When the falls finally revealed themselves — powerful, white, crashing into a moss-rimmed pool — the effect was almost theatrical. We sat on the rocks for a long while, the mist cooling our faces, saying nothing in particular.</p>
+
+    <div class="stop">
+      <div class="stop-time">2:00 PM</div>
+      <div class="stop-place">Tennessee → Roanoke, Virginia</div>
+    </div>
+    <p>We said goodbye to the Smokies in golden hour light, the mountains receding in our mirrors like a slow exhale. By the time we reached Roanoke, the sky had turned violet, and a new city was waiting.</p>
+  </section>
+
+  <div class="divider">· · ·</div>
+
+  <!-- DAY 3 -->
+  <section class="day" id="day3">
+    <p class="day-label">Day Three</p>
+    <h2>River Whispers & Mountain Sunsets</h2>
+    <p class="day-route">Roanoke River · Museum of Transportation · Natural Bridge · Shenandoah</p>
+
+    <p>We drove misty country roads to the Roanoke River, where rental tubes waited at the bank like floating invitations. The moment we pushed off into the current, the world simplified. For two hours we drifted — through shadow and sunlight, past wildflowers, no phones, no plans. Just the current and the trees.</p>
+
+    <h3>Virginia Museum of Transportation</h3>
+    <p>The steam engines are staggering up close. The air inside smells faintly of iron and engine oil, and standing next to a locomotive that once crossed continents makes modern life feel briefly small. We lingered three hours and could have stayed longer.</p>
+
+    <h3>Natural Bridge State Park</h3>
+    <p>The enormous limestone arch — 215 feet high, carved over millennia by a small stream — stands with the quiet confidence of something ancient. Walking beneath it feels like entering a cathedral. It left us wordless in the best way.</p>
+
+    <h3>Sunset at Shenandoah</h3>
+    <p>The valley below glowed gold. Ridgelines turned purple. The sky shifted through every warm color it knew. Deer grazed calmly by the roadside. The sun slipped behind the mountains and there was that perfect hush — the moment just after a beautiful thing happens, when the world seems to catch its breath.</p>
+
+    <div class="quote">
+      <p>"It wasn't just about the places we'd seen — it was how they made us feel. Calm. Connected. Deeply grateful."</p>
+    </div>
+  </section>
+
+  <div class="divider">· · ·</div>
+
+  <!-- DAY 4 -->
+  <section class="day" id="day4">
+    <p class="day-label">Day Four</p>
+    <h2>Into the Wild, Again</h2>
+    <p class="day-route">Virginia Safari Park & Zoo</p>
+
+    <p>We woke already smiling. We drove slowly through the safari park with buckets of feed, windows open. A llama appeared at the window — not beside it, <em>in</em> it — neck craning toward the bucket. Zebras pressed their noses against the car with surprising dignity. Ostriches were less dignified: bold, comic, stealing entire handfuls of food while we shrieked with laughter.</p>
+
+    <p>The deer were the unexpected highlight. One small fawn with dappled spots tapped my hand so gently I thought I'd imagined it, then looked up with enormous dark eyes as if to say: <em>more, please.</em> We gave it more.</p>
+
+    <div class="quote">
+      <p>"Hands sticky, hair ruffled by curious noses, feed crumbs everywhere — and we couldn't have cared less."</p>
+    </div>
+
+    <h3>The Birds' Room</h3>
+    <p>The zoo's aviary was a different kind of magic — quieter, more intimate. Tiny colorful birds landed on hands and shoulders without invitation. Wings brushed our arms. One bird perched on my shoulder and stayed for an extraordinary amount of time, clearly unbothered. Delicate, close, and just as unforgettable.</p>
+  </section>
+
+  <div class="divider">· · ·</div>
+
+  <!-- DAY 5 -->
+  <section class="day" id="day5">
+    <p class="day-label">Day Five</p>
+    <h2>Beneath the Earth & Heading Home</h2>
+    <p class="day-route">Luray Caverns, Virginia → Boston</p>
+
+    <div class="quote">
+      <p>"Some adventures take you above ground. Others take you deep beneath it — into a world millions of years in the making."</p>
+    </div>
+
+    <p>We arrived early and stepped from warm sunlight into cool, mineral-scented air. Stalactites hung like stone chandeliers, stalagmites rose to meet them, and mirror-still pools reflected the formations above. Every corner revealed something more astonishing than the last.</p>
+
+    <p>The Great Stalacpipe Organ stopped us in our tracks: mallets gently striking stalactites across 3.5 acres of cavern, producing tones that echo through the stone — part music, part ancient resonance. Haunting and beautiful. No photograph can hold it.</p>
+
+    <p>Emerging back into sunlight felt briefly disorienting — like being returned to a world that had continued without you. The caverns' gardens offered a gentle re-entry: flowers in bloom, birdsong, and fresh air carrying the memory of stone and time.</p>
+
+    <h3>Homeward Bound</h3>
+    <p>After a long lunch and one last pass through the gift shop — small crystals finding their way into our bags — we pointed the car north. The miles home felt different. Quieter. Reflective. We talked about everything: the bear and her cub, the sunset over Shenandoah, the fawn's tap, the cavern's impossible organ.</p>
+
+    <p>We arrived home after dark, carrying the kind of tiredness that feels earned and good. Five days. Five states. Mountains, rivers, caverns, and creatures. The kind of trip that doesn't just give you memories — it gives you a different way of seeing.</p>
+  </section>
+
+  <div class="closing">
+    <p>Until the next road calls.</p>
+    <span>Tales From The Suitcase &nbsp;·&nbsp; Boston to the Smokies &nbsp;·&nbsp; 2025</span>
+  </div>
+
+</main>
+
+<footer>
+  <em>Tales From The Suitcase</em> &nbsp;·&nbsp; A Road Trip Journal &nbsp;·&nbsp; 2025
+</footer>
+
+</body>
+</html>
