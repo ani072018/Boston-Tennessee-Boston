@@ -59,6 +59,15 @@
     text-transform: uppercase;
   }
 
+  /* signature ridgeline strip beneath hero */
+  .ridge {
+    display: block;
+    width: 100%;
+    height: 64px;
+    background: #fdf8f2;
+  }
+  .ridge svg { width: 100%; height: 100%; display: block; }
+
   /* NAV */
   nav {
     background: #fff;
@@ -216,6 +225,58 @@
     letter-spacing: 1rem;
   }
 
+  /* PHOTO MODULE */
+  .photo {
+    margin: 2.5rem 0;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -18px rgba(46,16,8,0.4);
+  }
+
+  .photo img {
+    width: 100%;
+    height: 46vh;
+    min-height: 300px;
+    max-height: 460px;
+    object-fit: cover;
+    display: block;
+    transform: scale(1.01);
+    transition: transform 1.2s cubic-bezier(.2,.7,.2,1);
+  }
+
+  .photo:hover img { transform: scale(1.06); }
+
+  .photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(20,8,4,0.65) 100%);
+    pointer-events: none;
+  }
+
+  .photo-caption {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 14px;
+    color: #f5f0e8;
+    z-index: 2;
+  }
+
+  .photo-caption strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+
+  .photo-caption span {
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+    color: #f0dfc8;
+  }
+
   /* NEWSLETTER */
   .newsletter {
     max-width: 700px;
@@ -350,6 +411,7 @@
   @media (max-width: 600px) {
     .container { padding: 0 1rem; }
     .quote { padding: 1.2rem 1.2rem; }
+    .photo img { height: 40vh; }
   }
 </style>
  <!-- Google tag (gtag.js) -->
@@ -380,6 +442,11 @@
   <p>A road trip through the heart of Appalachia</p>
   <p class="hero-date">August 28 – September 2, 2025 &nbsp;·&nbsp; 5 States</p>
 </header>
+<div class="ridge">
+  <svg viewBox="0 0 1440 64" preserveAspectRatio="none">
+    <polygon points="0,64 0,38 120,20 260,44 400,10 560,36 720,6 880,32 1040,14 1200,40 1320,18 1440,34 1440,64" fill="#fdf8f2"/>
+  </svg>
+</div>
 
 <nav>
   <a href="#intro">Prologue</a>
@@ -457,6 +524,11 @@
 
     <p>The Smokies in the morning are something else — damp pine drifting through the window, light still soft and golden. We headed to Cades Cove, a valley that seems to exist in a different century.</p>
 
+    <div class="photo">
+      <img src="images/cades-cove.jpg" alt="Wide green valley of Cades Cove framed by layered blue ridges, Great Smoky Mountains" loading="lazy">
+      <div class="photo-caption"><strong>Cades Cove</strong><span>Great Smoky Mountains National Park</span></div>
+    </div>
+
     <p>We rounded a bend and stopped. A black bear cub was nosing through the undergrowth, its mother a watchful silhouette nearby. We cut the engine. Nobody spoke. The bears moved at their own unhurried pace, indifferent to our wonder. Deer appeared later, grazing in the meadows. The kind of moment you can't plan for — you can only be grateful when it happens.</p>
 
     <div class="quote">
@@ -471,6 +543,11 @@
       <div class="stop-place">Tennessee → Roanoke, Virginia</div>
     </div>
     <p>We said goodbye to the Smokies in golden hour light, the mountains receding in our mirrors like a slow exhale. By the time we reached Roanoke, the sky had turned violet, and a new city was waiting.</p>
+
+    <div class="photo">
+      <img src="images/roanoke.jpg" alt="Roanoke, Virginia at dusk with the Blue Ridge Mountains behind the skyline" loading="lazy">
+      <div class="photo-caption"><strong>Roanoke, Virginia</strong><span>Sky turning violet as a new city waited</span></div>
+    </div>
   </section>
 
   <div class="divider">· · ·</div>
@@ -484,12 +561,20 @@
     <p>We drove misty country roads to the Roanoke River, where rental tubes waited at the bank like floating invitations. The moment we pushed off into the current, the world simplified. For two hours we drifted — through shadow and sunlight, past wildflowers, no phones, no plans. Just the current and the trees.</p>
 
     <h3>Virginia Museum of Transportation</h3>
+    <div class="photo">
+      <img src="images/car-museum-virginia.jpg" alt="Vintage locomotives and automobiles on display at the Virginia Museum of Transportation" loading="lazy">
+      <div class="photo-caption"><strong>Virginia Museum of Transportation</strong><span>Roanoke, Virginia</span></div>
+    </div>
     <p>The steam engines are staggering up close. The air inside smells faintly of iron and engine oil, and standing next to a locomotive that once crossed continents makes modern life feel briefly small. We lingered three hours and could have stayed longer.</p>
 
     <h3>Natural Bridge State Park</h3>
     <p>The enormous limestone arch — 215 feet high, carved over millennia by a small stream — stands with the quiet confidence of something ancient. Walking beneath it feels like entering a cathedral. It left us wordless in the best way.</p>
 
     <h3>Sunset at Shenandoah</h3>
+    <div class="photo">
+      <img src="images/shenandoah.jpg" alt="Golden sunset over the ridgelines of Shenandoah Valley, Virginia" loading="lazy">
+      <div class="photo-caption"><strong>Shenandoah Valley</strong><span>Ridgelines turned purple as the sky shifted through every warm color it knew</span></div>
+    </div>
     <p>The valley below glowed gold. Ridgelines turned purple. The sky shifted through every warm color it knew. Deer grazed calmly by the roadside. The sun slipped behind the mountains and there was that perfect hush — the moment just after a beautiful thing happens, when the world seems to catch its breath.</p>
 
     <div class="quote">
@@ -527,6 +612,11 @@
 
     <div class="quote">
       <p>"Some adventures take you above ground. Others take you deep beneath it — into a world millions of years in the making."</p>
+    </div>
+
+    <div class="photo">
+      <img src="images/luray-caverns.jpg" alt="Stalactites and mirror-still reflecting pools inside Luray Caverns, Virginia" loading="lazy">
+      <div class="photo-caption"><strong>Luray Caverns</strong><span>Stalactites hung like stone chandeliers</span></div>
     </div>
 
     <p>We arrived early and stepped from warm sunlight into cool, mineral-scented air. Stalactites hung like stone chandeliers, stalagmites rose to meet them, and mirror-still pools reflected the formations above. Every corner revealed something more astonishing than the last.</p>
